@@ -3,7 +3,7 @@
 ```mermaid
 sequenceDiagram
 
-  participant A as NCP country NL
+participant A as NCP country NL
  
 create participant XSLT
 
@@ -15,17 +15,15 @@ create participant XSLT
     XSLT->>XSLT: convert to ePS
 Note right of XSLT: syntax conversion
 Note right of XSLT: addition NL-narrative
-
-    XSLT->>A: eHDSI friendly version
-    A->>A: create original document (pdf)
-Note left of A: PDF created from added NL-narrative
     XSLT->>XSLT: add NEC valueset items
 Note right of XSLT: This is the OTH-workaround
-  create participant openNCP
-    XSLT->>openNCP: eHDSI friendly + NEC 
-   openNCP->>openNCP: add CTS valueset items
-Note left of openNCP: mapped transformations and translations via TSAM-TS
-create participant NCP country ES
-    openNCP->> NCP country ES: eHDSI pivot
+  create participant TS
+    XSLT->>TS : eHDSI friendly + NEC 
+   TS->>TS: add CTS valueset items
+Note right of TS: Transcoding using MVC maps
+    TS->>A: pivot
+
+A->>A: create 'original document'
+
 
 ```
