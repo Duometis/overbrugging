@@ -1,7 +1,3 @@
-# Conversion specifications
-
-This is the entrance to the conversion specifications: [acute zorg naar ePS](converter/eps.md).
-
 # PIEZO-A Netherlands sequence diagram
 
 ```mermaid
