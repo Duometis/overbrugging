@@ -8,11 +8,13 @@ participant C as LSP
 participant A as NCP country A (Netherlands)
 
 B->>A: request for PS
+Note left of B: dutch patient sees HCP in country B
 A->>C: request for AZ-subset
 C->>A: response bundle AZ-subset (using VWI and MITZ)
-
+Note left of A: LSP routes the request to the PS sourcesystems in NL
+Note left of A: and returns the data received from known sources
+Note left of A: to the NCP for processing
 create participant XSLT
-
  
     A->>XSLT: response bundle AZ-subset
 
