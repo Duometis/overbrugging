@@ -36,8 +36,9 @@ A->>B: pivot
 Note right of C: this is a L3 CDA document for the HCP in country B
 A->>B: original document
 Note right of C: this is the PDF for the dutch patient
+Note left of B: HCP gives 'original document' to dutch patient
 B->>B: translation and transcoding pivot
 Note left of B: up to country B what they give to the HCP
-Note left of B: HCP gives 'original document' to dutch patient
+
 
 ```
