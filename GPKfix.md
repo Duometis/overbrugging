@@ -1,5 +1,5 @@
 
-# Acute Zorg KEZO building blocks to PS Myhealth@EU
+# plek G-standaard GPK-fix in PS-A sequence diagram
 ```mermaid
 sequenceDiagram
 
