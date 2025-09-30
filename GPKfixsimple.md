@@ -17,10 +17,8 @@ create participant XSLT
     A->>XSLT: params: id, setId
   
     XSLT->>XSLT: convert to ePS format
-
-    XSLT->>XSLT: add translated valueset items
-
     XSLT->>XSLT : eHDSI friendly GPK-split
+    XSLT->>XSLT: add translated valueset items
 
   create participant TS
     XSLT->>TS : eHDSI friendly + NEC/OTH + GPK-split
