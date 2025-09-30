@@ -1,5 +1,5 @@
 
-# plek G-standaard GPK-fix in PS-A sequence diagram
+# (draft) with G-standaard GPK-split in PS-A sequence diagram
 ```mermaid
 sequenceDiagram
 
@@ -24,11 +24,13 @@ create participant XSLT
 Note right of XSLT: syntax conversion
 Note right of XSLT: addition NL-narrative
     XSLT->>XSLT: add translated valueset items
-Note right of XSLT: This is the OTH-workaround
+Note right of XSLT: This is where the GPK is split and the strenght and form are added via a lookup-file into the XML
+    XSLT->>XSLT : eHDSI friendly GPK-split
+Note right of XSLT: This is the OTH-workaround where valueset items (marked NEC) are added via a lookup-file (list name file) and put into the XML
   create participant TS
-    XSLT->>TS : eHDSI friendly + NEC 
+    XSLT->>TS : eHDSI friendly + NEC/OTH + GPK-split
    TS->>TS: add CTS valueset items
-Note right of TS: Transcoding using MVC maps
+Note right of TS: Transcoding where all items from national valuesets that have been mapped onto MVC are added. (list names mapping)
     TS->>A: pivot
 A->>A: create 'original document'
 Note right of A: using a customizable NL stylesheet 
