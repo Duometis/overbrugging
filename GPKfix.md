@@ -23,7 +23,7 @@ create participant XSLT
     XSLT->>XSLT: convert to ePS format
 Note right of XSLT: syntax conversion
 Note right of XSLT: addition NL-narrative
-    XSLT->>XSLT: add translated valueset items
+    XSLT->>XSLT: add 'GPK based werkzame stof, sterkte, farmaceutische vorm, GPK-basiseenheid' valueset items
 Note right of XSLT: This is where the GPK is split and the strenght and form are added via a lookup-file into the XML
     XSLT->>XSLT : eHDSI friendly GPK-split
 Note right of XSLT: This is the OTH-workaround where valueset items (marked NEC) are added via a lookup-file (list name file) and put into the XML
