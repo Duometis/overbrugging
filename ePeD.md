@@ -12,10 +12,10 @@ sequenceDiagram
     A->>LSP: request eP (active prescriptions)
    
     LSP->>XIS: request eP 
-  XIS-->>LSP: response (AIS) ??
-  XIS-->>LSP: response (HIS) ??
-  XIS-->>LSP: response (EPD) ??
-  XIS-->>LSP: response (EPD) ??
+  XIS->>LSP: response (AIS) MA+VV (check MP9 voor nationale afhandeling)
+  XIS->>LSP: response (HIS) MA+VV (check MP9 voor nationale afhandeling)
+  XIS->>LSP: response (EPD) MA+VV (check MP9 voor nationale afhandeling)
+  XIS-->>LSP: response ("PGO") (check dit scenario "via MedMij")
   LSP->>A: response bundle (active prescriptions)
     A->>A: transformation + transcoding
     A->>B: pivot eP
