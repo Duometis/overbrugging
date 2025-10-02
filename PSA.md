@@ -1,3 +1,5 @@
+# PS-A sequence diagram - high level
+
 ```mermaid
 sequenceDiagram
 Note over HIS: GP system
