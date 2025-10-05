@@ -2,19 +2,19 @@
 ```mermaid
 flowchart TD
     A((start)) --> B(check external codesystems and HL7 codesystems on terminology.hl7.org)
-B --> C{Is er een bruikbaar external codesystem?}
-C -->|Ja| D[gebruik deze]
-D --> E{bevat dit codesystem alle values die je nodig hebt?}
-E -->|Ja| F((klaar))
-E -->|Nee| G[vraag nieuwe codes aan bij externe codesystem]
-C -->|Nee| H{is er een HL7 internal THO codesystem dat je kan gebruiken?}
-H -->|Ja| I[gebruik deze]
-I --> J{bevat dit codesystem alle values die je nodig hebt?}
-J -->|ja| K((Klaar))
-J -->|nee| L[volg het proces deze toe te voegen UTG]
-H -->|Nee| M{is er een bestaand external codesystem die toegevoegd kan worden aan THO?}
-M -->|Ja| N[volg het proces om een dit externe codesystem toe te voegen]
-M -->|Nee| O[volg het proces om een nieuwe HL7 code system resource toe te voegen]
+B --> C{Is there an external code system listed that you can use that scopes the need?}
+C -->|Yes| D[the canonical CodeSystem URL SHALL be used]
+D --> E{Are the desired codes within the scope of the existing HL7 code system?}
+E -->|Yes| F((end))
+E -->|No| G[E:Work with HTA to request new codes in the external code system]
+C -->|No| H{Is there an HL7 internal code system in THO you can use that scopes the need?}
+H -->|Yes| I[the canonical CodeSystem URL SHALL be used]
+I --> J{Are the desired codes within the scope of the existing HL7 code system?}
+J -->|Yes| K((end))
+J -->|No| L[Add the needed codes through the existing HL7 code system using UTG]
+H -->|No| M{Is there an existing external code system NOT in THO that you want to use that scopes the need?}
+M -->|Yes| N[Implementers SHALL follow the HTA defined process for validating and requesting identifyers for external codesystems and idenfifier systems to request one, if not already validated by HTA]
+M -->|No| O[request new HL7 code system resource]
  
 
 
