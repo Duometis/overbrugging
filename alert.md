@@ -1,11 +1,4 @@
-# Allergies and Other Adverse Reactions
-
-**Target**: [Template  eHDSI Allergies and Other Adverse Reactions](https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/tmp-1.3.6.1.4.1.12559.11.10.1.3.1.2.12-2021-12-17T092901.html)
-   
-   Contains 1..*  R [eHDSI Allergy And Intolerance Concern (DYNAMIC)](https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/tmp-1.3.6.1.4.1.12559.11.10.1.3.1.3.16-DYNAMIC.html)
-
-**Source**: [Template  Organizer AllergieIntoleranties](https://decor.nictiz.nl/pub/acutezorg/acutezorg-html-20240603T081743/tmp-2.16.840.1.113883.2.4.3.11.60.66.10.20-2018-04-18T000000.html)  
- Bevat 0..* R [KEZO Allergy Concern (2015‑07‑15)](https://decor.nictiz.nl/pub/acutezorg/acutezorg-html-20240603T081743/tmp-2.16.840.1.113883.2.4.3.11.60.66.10.215-2015-07-15T000000.html) 
+bij https://github.com/Nictiz/ncp-conversie/blob/main/converter/section-allergies.md
 
 uit [Memo fit gap analyse dekkingsgraad EU-PS]Allergieën en intoleranties
 De huisarts legt alleen medicatie overgevoeligheden vast en geen specifieke stof allergieën. Dit houdt in dat in plateau 1 waarbij het LSP wordt aangesloten op het NCPeH-NL een gedeeltelijkoverzicht van de allergieën en intoleranties kan worden opgeleverd.
