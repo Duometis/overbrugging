@@ -13,3 +13,6 @@ Source: [MP HL7 Medicatieafspraken Organizer](https://decor.nictiz.nl/pub/medica
 Source MA: [MP CDA Medicatieafspraak](https://decor.nictiz.nl/pub/medicatieproces/mp-html-20181220T121121/tmp-2.16.840.1.113883.2.4.3.11.60.20.77.10.9235-2018-12-04T143321.html)
 
 ## eHDSI dataelements
+| eHDSI | source | target | remarks |
+| ----------- | ----------- |-----------  |----------- |
+| substanceAdministration | 
