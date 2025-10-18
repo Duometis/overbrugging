@@ -31,8 +31,6 @@ flowchart LR
 42(active MP CDA Ingredient) --> 81(MP CDA Ingredient Material Kind)
 81(MP CDA Ingredient Material Kind) --> 91(MP CDA Material Code Ext)
 51(MP Ingredient quantity) --> 61(Quantity unit and translation-s)
-42(MP CDA Ingredient) --> 52(MP CDA Ingredient Material Kind)
-42(MP CDA Ingredient) --> 53(MP Ingredient quantity)
 3(MP CDA Medicatieafspraak inhoud) --> 13(MP CDA Author Participation)
 3(MP CDA Medicatieafspraak inhoud) --> 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2)
 3(MP CDA Medicatieafspraak inhoud) --> 15(active Kopie-indicator)
