@@ -19,8 +19,7 @@ flowchart LR
 2(eHDSI Medication Item) --> 3(PS Medication Information)
 3(eHDSI PS Medication Information) --> 4(eHDSI PS Manufactured Material)
 2(eHDSI Medication Item) --> 5(eHDSI Author Prescriber)
-2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions)
-
+2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions) 
 
 
 
