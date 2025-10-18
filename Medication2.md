@@ -15,11 +15,21 @@ Source MA: [MP CDA Medicatieafspraak](https://decor.nictiz.nl/pub/medicatieproce
 # Use of Templates in eHDSI Medication Summary
 ```mermaid
 flowchart LR
-    1(eHDSI Medication Summary) --> 2(containment eHDSI Medication Item)
-2(eHDSI Medication Item) --> 3(PS Medication Information)
+    1(eHDSI Medication Summary) --> 2(eHDSI Medication Item)
+2(eHDSI Medication Item) --> 3(eHDSI PS Medication Information)
 3(eHDSI PS Medication Information) --> 4(eHDSI PS Manufactured Material)
 2(eHDSI Medication Item) --> 5(eHDSI Author Prescriber)
-2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions) 
+2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions)
+```
+
+| CDA Template| Description |
+| ----------- | ----------- |
+|eHDSI Medication Summary |The medication summary section shall contain a description of the patient's medications as part of the patient summary|
+|eHDSI Medication Item|This entry content module makes use of the medicine and instruction entry content modules. Medications and their prescriptions are perhaps the most difficult data elements to model due to variations in the ways that medications are prescribed. This profile identifies the following relevant fields of a medication as being important to be able to generate in a medical summary. The table below identifies and describes these fields, and indicates the constraints on whether or not they are required to be sent. The fields are listed in the order that they appear in the CDA XML content.|
+|eHDSI PS Medication Information|This entry describes the consumable subject of the medication statement. All the information about the  medication is provided in the included eHDSI PS Manufactured Material template.|
+|eHDSI PS Manufactured Material|All the information about the  medication|
+|eHDSI Author Prescriber|A CDA document shall have at least one author. Authors could be either human (assignedPerson) either devices (assignedAuthoringDevice). When there is no HP but we have the method of assembly of data by a device, such as the “spider” method, we have assignedAuthoringDevice. When the data is collected from different sources & pre-existing documents that are part of a bigger system. In that case the organization responsible of that collection “signed” the PS as responsible.|
+|eHDSI Medication FulFillment Instructions|Any medication may be the subject of further instructions to the pharmacist, for example to indicate that it should be labeled in Spanish, et cetera. This structure is included in the target substance administration or supply act using the element defined in the CDA Schema. The figure below is an example of recording an instruction for an , and is used as context for the sections to follow.|
 
 
 
