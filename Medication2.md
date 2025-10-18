@@ -44,11 +44,11 @@ flowchart LR
 3(MP CDA Medicatieafspraak inhoud) --> 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2)
 3(MP CDA Medicatieafspraak inhoud) --> 15(active Kopie-indicator)
 3(MP CDA Medicatieafspraak inhoud) --> 16(active MP MedBeh identificatie)
-1(MP CDA Medicatiegegevens) --> 4(MP CDA Verstrekkingsverzoek)
-1(MP CDA Medicatiegegevens) --> 5(MP CDA Toedieningsafspraak)
-1(MP CDA Medicatiegegevens) --> 6(MP CDA Verstrekking)
-1(MP CDA Medicatiegegevens) --> 7(MP CDA Medicatiegebruik)
-1(MP CDA Medicatiegegevens) --> 8(MP CDA Part2Reuse) 
+1(MP HL7 Medicatieafspraken Organizer) --> 4(MP CDA Verstrekkingsverzoek)
+1(MP HL7 Medicatieafspraken Organizer) --> 5(MP CDA Toedieningsafspraak)
+1(MP HL7 Medicatieafspraken Organizer) --> 6(MP CDA Verstrekking)
+1(MP HL7 Medicatieafspraken Organizer) --> 7(MP CDA Medicatiegebruik)
+1(MP HL7 Medicatieafspraken Organizer) --> 8(MP CDA Part2Reuse) 
 ```
 
 | CDA Template| Omschrijving |
