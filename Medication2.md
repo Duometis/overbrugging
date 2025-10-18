@@ -16,10 +16,19 @@ flowchart LR
 2(eHDSI Medication Item) --> 5(eHDSI Author Prescriber)
 2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions)
 ```
+| CDA Template| Omschrijving |
+| ----------- | ----------- |
+|eHDSI Medication Summary |De sectie "Medicatieoverzicht" moet een beschrijving bevatten van de medicatie van de patiënt als onderdeel van het patiëntoverzicht.|
+|eHDSI Medication Item|Dit template maakt gebruik van de template voor het geneesmiddel en instructies voor de apotheker. Medicaties en hun voorschriften behoren wellicht tot de moeilijkste gegevenselementen om te modelleren, vanwege de grote variatie in de manier waarop medicijnen worden voorgeschreven.|
+|eHDSI PS Medication Information|Dit beschrijft het gebruik van het geneesmiddel. Alle informatie over het geneesmiddel zelf wordt via de eHDSI PS Manufactured Material-template beschreven.|
+|eHDSI PS Manufactured Material|Informatie over het geneesmiddel. Hier zit vooral het werk wat we nog moeten doen voor de G-standaard. het afleiden van de onderdelen die lost moeten worden gemapt op dit template omdat we an het geneesmiddel alleen de PRK-HPK en GPK krijgen uit de KEZO bouwsteen|
+|eHDSI Author Prescriber| Hier gaat het over de voorschrijver en dat is een huisarts, specialist etc. Note: Een CDA-document moet minstens één auteur hebben. Auteurs kunnen zowel personen (assignedPerson) als apparaten (assignedAuthoringDevice) zijn. Wanneer er geen zorgverlener (persoon) is, maar de gegevens zijn samengesteld door een apparaat, bijvoorbeeld via samenvoegen door een ander systeem, wordt assignedAuthoringDevice gebruikt. Wanneer de gegevens afkomstig zijn uit verschillende bronnen en bestaande documenten die deel uitmaken van een groter systeem, is de organisatie die verantwoordelijk is voor die gegevensverzameling degene die het patiëntoverzicht (PS) “ondertekent” als verantwoordelijke.|
+|eHDSI Medication FulFillment Instructions|Template voor aanvullende instructies aan de apotheker, bijvoorbeeld om aan te geven dat het etiket in het Spaans moet worden opgesteld, enzovoort.|
+
 # gebruik van CDA Templates in Acute Zorg KEZO bouwstenen
 ```mermaid
 flowchart LR
-1(MP CDA Medicatiegegevens) --> 2(MP CDA Medicatieafspraak)
+1(MP HL7 Medicatieafspraken Organizer) --> 2(MP CDA Medicatieafspraak)
 2(MP CDA Medicatieafspraak) --> 3(MP CDA Medicatieafspraak inhoud)
 3(MP CDA Medicatieafspraak inhoud) --> 11(MP CDA Medicatieafspraak onderdelen 1)
 11(MP CDA Medicatieafspraak onderdelen 1) --> 21(Usable Period)
@@ -27,8 +36,8 @@ flowchart LR
 12(MP CDA Medication Information) --> 31(MP CDA Medication Contents)
 31(MP CDA Medication Contents) --> 41(MP CDA Medication Code)
 31(MP CDA Medication Contents) --> 42(MP CDA Ingredient)
-42(active MP CDA Ingredient) --> 51(MP Ingredient quantity)
-42(active MP CDA Ingredient) --> 81(MP CDA Ingredient Material Kind)
+42(MP CDA Ingredient) --> 51(MP Ingredient quantity)
+42(MP CDA Ingredient) --> 81(MP CDA Ingredient Material Kind)
 81(MP CDA Ingredient Material Kind) --> 91(MP CDA Material Code Ext)
 51(MP Ingredient quantity) --> 61(Quantity unit and translation-s)
 3(MP CDA Medicatieafspraak inhoud) --> 13(MP CDA Author Participation)
@@ -44,12 +53,25 @@ flowchart LR
 
 | CDA Template| Omschrijving |
 | ----------- | ----------- |
-|eHDSI Medication Summary |De sectie "Medicatieoverzicht" moet een beschrijving bevatten van de medicatie van de patiënt als onderdeel van het patiëntoverzicht.|
-|eHDSI Medication Item|Dit template maakt gebruik van de template voor het geneesmiddel en instructies voor de apotheker. Medicaties en hun voorschriften behoren wellicht tot de moeilijkste gegevenselementen om te modelleren, vanwege de grote variatie in de manier waarop medicijnen worden voorgeschreven.|
-|eHDSI PS Medication Information|Dit beschrijft het gebruik van het geneesmiddel. Alle informatie over het geneesmiddel zelf wordt via de eHDSI PS Manufactured Material-template beschreven.|
-|eHDSI PS Manufactured Material|Informatie over het geneesmiddel. Hier zit vooral het werk wat we nog moeten doen voor de G-standaard. het afleiden van de onderdelen die lost moeten worden gemapt op dit template omdat we an het geneesmiddel alleen de PRK-HPK en GPK krijgen uit de KEZO bouwsteen|
-|eHDSI Author Prescriber| Hier gaat het over de voorschrijver en dat is een huisarts, specialist etc. Note: Een CDA-document moet minstens één auteur hebben. Auteurs kunnen zowel personen (assignedPerson) als apparaten (assignedAuthoringDevice) zijn. Wanneer er geen zorgverlener (persoon) is, maar de gegevens zijn samengesteld door een apparaat, bijvoorbeeld via samenvoegen door een ander systeem, wordt assignedAuthoringDevice gebruikt. Wanneer de gegevens afkomstig zijn uit verschillende bronnen en bestaande documenten die deel uitmaken van een groter systeem, is de organisatie die verantwoordelijk is voor die gegevensverzameling degene die het patiëntoverzicht (PS) “ondertekent” als verantwoordelijke.|
-|eHDSI Medication FulFillment Instructions|Template voor aanvullende instructies aan de apotheker, bijvoorbeeld om aan te geven dat het etiket in het Spaans moet worden opgesteld, enzovoort.|
+|MP HL7 Medicatieafspraken Organizer|Lijst van medicatieafspraken|
+|MP CDA Medicatiegegevens|| 
+|MP CDA Medicatieafspraak|	Medicatieafspraak met eventueel op-/afbouw schema|
+|MP CDA Medicatieafspraak inhoud|Medicatieafspraak met eventueel op-/afbouw schema|
+|MP CDA Medicatieafspraak onderdelen 1|MP CDA Medicatieafspraak onderdelen, deel 1|
+|Usable Period|Gebruiksperiode|
+|MP CDA Medication Information|MP CDA Medication Information| 
+|MP CDA Medication Contents|MP CDA Medication Information inhoud|
+|MP CDA Medication Code|Medicatie codering voor medicatieproces, CDA versie.|
+|MP CDA Ingredient|Ingrediënt van medicatie (CDA extensie)|
+|MP Ingredient quantity|De relatieve hoeveelheid van dit ingrediënt in de aangeduide medicatie
+|Quantity unit and translation|Template: Quantity unit and Translation(s)
+|MP CDA Ingredient Material Kind|Materiaalsoort (CDA extensie) 
+|MP CDA Material Code Ext|Material Code Ext (CDA)
+|MP CDA Author Participation|CDA Author Participation voor medicatieproces|
+|MP CDA voorstel Medicatieafspraak onderdelen 2|Medicatieafspraak onderdelen voor de gewone medicatieafspraak én de Voorstel medicatieafspraak en de medicatieafspraak in het voorstel verstrekkingsverzoek, deel 2. hier nog 10 templates!!|
+|active Kopie -indicator|	Kopie-indicator - bij bouwstenen in medicatieproces|
+|active MP MedBeh identificatie|Identificatie van de medicamenteuze behandeling|
+
 
 ## eHDSI dataelements (as-is 18 oktober 2025)
 
