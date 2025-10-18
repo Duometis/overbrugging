@@ -100,7 +100,7 @@ De eHDSI Medication Item heeft:
 - **EIVL_TS**: Represents an event-based time interval.
 - **SXPR_TS**: Represents a parenthetical set of time expressions.
 
-The datatypes from the NL dosages must be translated to the eHDSI dosage when we want to convert them. This is a complex matter requiring real MP knowledge, and it is questionable whether the conversion is possible.
+Note: De gegevenstypen van de Nederlandse doseringen moeten worden vertaald naar de eHDSI-dosering wanneer we deze willen converteren. Dit is een complex vraagstuk dat grondige kennis van medicatieprocessen (MP) vereist, en het is de vraag of deze conversie überhaupt mogelijk is (!)
 
 Daaronder zitten twee een doseerschema's:
 
@@ -111,6 +111,10 @@ Deze zijn beter mapbaar maar hebben weinig betekenis zonder toedienschema.
 Besloten is dosering niet te doen op dit moment; wanneer in pivot alleen active ingredient (ATC, b..v "IBUPROFEN") uitgewisseld wordt in vertaalde vorm is dosering in Nederlandse vorm zinloos: dat is b.v. 3x daags 2 weken, maar zonder sterkte (400 mg of zo) heeft dat geen informatieve waarde. Sterkte en vorm van medicatie zouden uit G-standaard gehaald moeten worden om zinvolle doseringen uit te kunnen wisselen.
 
 Dosering kan wel in NL narrative en/of Original document.
+
+Dit is <span style="color:#28a745">groene tekst (#28a745)</span>  
+Dit is <span style="color:rgb(255,140,0)">oranje tekst (rgb)</span>
+
 
 ## Acute zorg (as-is 18 oktober 2025)
 
