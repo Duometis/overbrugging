@@ -7,7 +7,7 @@ Target: [Template  eHDSI Medication Summary](https://art-decor.ehdsi.eu/publicat
 
 Source: [MP HL7 Medicatieafspraken Organizer](https://decor.nictiz.nl/pub/medicatieproces/mp-html-20181220T121121/tmp-2.16.840.1.113883.2.4.3.11.60.20.77.10.9265-2018-12-13T000000.html) -> [MP CDA Medicatieafspraak](https://decor.nictiz.nl/pub/medicatieproces/mp-html-20181220T121121/tmp-2.16.840.1.113883.2.4.3.11.60.20.77.10.9235-2018-12-04T143321.html)
 
-# gebruk van CDA Templates in eHDSI Medication Summary
+# gebruik van CDA Templates in eHDSI Medication Summary
 ```mermaid
 flowchart LR
     1(eHDSI Medication Summary) --> 2(eHDSI Medication Item)
@@ -15,6 +15,31 @@ flowchart LR
 3(eHDSI PS Medication Information) --> 4(eHDSI PS Manufactured Material)
 2(eHDSI Medication Item) --> 5(eHDSI Author Prescriber)
 2(eHDSI Medication Item) --> 6(eHDSI Medication FulFillment Instructions)
+```
+# gebruik van CDA Templates in Acute Zorg KEZO bouwstenen
+```mermaid
+flowchart LR
+1(MP CDA Medicatiegegevens) --> 2(MP CDA Medicatieafspraak)
+2(MP CDA Medicatieafspraak) --> 3(MP CDA Medicatieafspraak inhoud -9)
+3(MP CDA Medicatieafspraak inhoud -9) --> 11(MP CDA Medicatieafspraak onderdelen 1 -9)
+11(MP CDA Medicatieafspraak onderdelen 1 -9) --> 21(Usable Period -9)
+3(MP CDA Medicatieafspraak inhoud -9) --> 12(MP CDA Medication Information -9)
+12(MP CDA Medication Information -9) --> 31(MP CDA Medication Contents -9)
+31(MP CDA Medication Contents -9) --> 41(MP CDA Medication Code -9)
+31(MP CDA Medication Contents -9) --> 42(active MP CDA Ingredient -9)
+42(active MP CDA Ingredient -9) --> 51(MP Ingredient quantity -9)
+51(MP Ingredient quantity -9) --> 61(Quantity unit and translation-s -9)
+42(active MP CDA Ingredient -9) --> 52(MP CDA Ingredient Material Kind -9)
+42(active MP CDA Ingredient -9) --> 53(MP CDA Ingredient Material Kind)
+3(MP CDA Medicatieafspraak inhoud -9) --> 13(MP CDA Author Participation -9)
+3(MP CDA Medicatieafspraak inhoud -9) --> 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2 -9)
+3(MP CDA Medicatieafspraak inhoud -9) --> 15(active Kopie-indicator -9)
+3(MP CDA Medicatieafspraak inhoud -9) --> 16(active MP MedBeh identificatie -9)
+1(MP CDA Medicatiegegevens) --> 4(MP CDA Verstrekkingsverzoek)
+1(MP CDA Medicatiegegevens) --> 5(MP CDA Toedieningsafspraak)
+1(MP CDA Medicatiegegevens) --> 6(MP CDA Verstrekking)
+1(MP CDA Medicatiegegevens) --> 7(MP CDA Medicatiegebruik)
+1(MP CDA Medicatiegegevens) --> 8(MP CDA Part2Reuse) 
 ```
 
 | CDA Template| Omschrijving |
@@ -88,7 +113,9 @@ De Nederlandse dosering kent het volgende toedienschema bij de doseerschema's:
 - Middag
 - Avond
 - Complexer doseerschema met meer dan één dagdeel.
-- Veelal met eigen CDA templates en vaak NL datatypes.
+- Veelal met eigen CDA templates en vaak NL datatypes. <mark>LM: Welke templates zijn er allemaal en hoe vaak worden ze gebruikt? Zijn er templates bij die we vervolgens NIET proberen te mappen op de eHDSI Medication Item template en vervolgens WEL meenemen in de narrative? Dan wordt het wel zichtbaar (in het nederlands) voor de patient in de PDF.</mark>
+
+
 
 De eHDSI Medication Item heeft:
 
@@ -100,21 +127,17 @@ De eHDSI Medication Item heeft:
 - **EIVL_TS**: Represents an event-based time interval.
 - **SXPR_TS**: Represents a parenthetical set of time expressions.
 
-Note: De gegevenstypen van de Nederlandse doseringen moeten worden vertaald naar de eHDSI-dosering wanneer we deze willen converteren. Dit is een complex vraagstuk dat grondige kennis van medicatieprocessen (MP) vereist, en het is de vraag of deze conversie überhaupt mogelijk is (!)
+Note: De gegevenstypen van de Nederlandse doseringen moeten worden vertaald naar de eHDSI-dosering wanneer we deze willen converteren. Dit is een complex vraagstuk dat grondige kennis van medicatieprocessen (MP) vereist, en het is de vraag of deze conversie überhaupt mogelijk is <mark>LM: Kunnen we er achter komen voor welke doseerschema's en templates dit wel lukt?</mark>
 
 Daaronder zitten twee een doseerschema's:
 
-DoseQuantity: relatief eenvoudig maar met low/high en center die op de andere eHDSI doseringen aangepast moeten worden
-Toedieningssnelheid: deze lijkt wel te mappen op de EU waarden
+- DoseQuantity: relatief eenvoudig maar met low/high en center die op de andere eHDSI doseringen aangepast moeten worden
+- Toedieningssnelheid: deze lijkt wel te mappen op de EU waarden
 Deze zijn beter mapbaar maar hebben weinig betekenis zonder toedienschema.
 
-Besloten is dosering niet te doen op dit moment; wanneer in pivot alleen active ingredient (ATC, b..v "IBUPROFEN") uitgewisseld wordt in vertaalde vorm is dosering in Nederlandse vorm zinloos: dat is b.v. 3x daags 2 weken, maar zonder sterkte (400 mg of zo) heeft dat geen informatieve waarde. Sterkte en vorm van medicatie zouden uit G-standaard gehaald moeten worden om zinvolle doseringen uit te kunnen wisselen.
+Besloten is dosering niet te doen op dit moment <mark>LM: dit besluit is in het voorjaar van 2025 genomen omdat er geen mensen vanuit het MP team beschikbaar waren om het uit te zoeken</mark>; wanneer in pivot alleen active ingredient (ATC, b..v "IBUPROFEN") uitgewisseld wordt in vertaalde vorm is dosering in Nederlandse vorm zinloos: dat is b.v. 3x daags 2 weken, maar zonder sterkte (400 mg of zo) heeft dat geen informatieve waarde. Sterkte en vorm van medicatie zouden uit G-standaard gehaald moeten worden om zinvolle doseringen uit te kunnen wisselen.<mark>LM: dit is wat we met de PRK-HPK-GPK split wel gaan doen. Afhankelijk of we alle varianten van doseerschema's nodig hebben en kunnen mappen op de eHDSI medication item </mark>
 
-Dosering kan wel in NL narrative en/of Original document.
-
-Dit is <span style="color:#28a745">groene tekst (#28a745)</span>  
-Dit is <span style="color:rgb(255,140,0)">oranje tekst (rgb)</span>
-
+Dosering kan wel in NL narrative en/of Original document. <mark>LM: de narrative werkt nog niet op alles. Dit moet ook nog worden bekeken. </mark>
 
 ## Acute zorg (as-is 18 oktober 2025)
 
@@ -139,11 +162,11 @@ Deze kunnen allen genegeerd worden:
 | ----------- | ----------- |-----------  |----------- |
 ||als [MP HL7 Medicatieafspraken Organizer] geen [hl7:component] heeft van [ MP CDA Medicatieafspraak] of [MP CDA Medicatieafspraak andermans]|[eHDSIAbsentOrUnknownMedication 2020‑04‑21](https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/tmp-1.3.6.1.4.1.12559.11.10.1.3.1.2.3-2020-09-07T095657.html)|One of the concepts from the target valueset shall be used in the code element to record that a patient is either not on medications, or that medications are not known.|
 |medicinal product| [Template MP CDA Medication Code](https://decor.nictiz.nl/pub/medicatieproces/mp-html-20181220T121121/tmp-2.16.840.1.113883.2.4.3.11.60.20.77.10.9253-2018-12-06T133041.html0)|[Template  eHDSI PS Manufactured Material](https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/tmp-1.3.6.1.4.1.12559.11.10.1.3.1.3.32-2024-04-11T135939.html)| "The name of the substance or product. This should be sufficient for a provider to identify the kind of medication. It may be a trade name or a generic name. This information is required in all medication entries. If the name of the medication is unknown, the type, purpose or other description may be supplied. The name should not include packaging, strength or dosing information."|
-|active ingredients |uit mapping GPK halen?||toekomst|
-|strength |uit mapping GPK halen voor ieder ingredient?||toekomst|
+|active ingredients |uit mapping GPK halen?||<mark>toekomst</mark>|
+|strength |uit mapping GPK halen voor ieder ingredient?||<mark>toekomst</mark>|
 |eHDSIDoseForm |||mapping FarmaceutischeVormCodelijst op DoseForm (CTS en NEC mapping)|
-|units per intake |Doseerinstructie||toekomst|
-|frequency of intake |Doseerinstructie||toekomst|
+|units per intake |Doseerinstructie||<mark>toekomst</mark>|
+|frequency of intake |Doseerinstructie||<mark>toekomst</mark>|
 |eHDSIRouteofAdministration |[Template  MP CDA Medicatieafspraak](https://decor.nictiz.nl/pub/medicatieproces/mp-html-20181220T121121/tmp-2.16.840.1.113883.2.4.3.11.60.20.77.10.9235-2018-12-04T143321.html) cda:routeCode, mp-dataelement900-23242 final Toedieningsweg 9|Route of administration [eHDSIRouteofAdministration](https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/voc-1.3.6.1.4.1.12559.11.10.1.3.1.42.12-DYNAMIC.html)|Toedieningsweg, G-Standaard tabel voor toedieningswegen: subtabel 0007, NL Value Set ID 2.16.840.1.113883.2.4.3.11.60.40.2.9.5.6. Combinatie van NEC en CTS items van - NL VoorschriftToedieningswegCodelijst naar EU eHDSIRouteofAdministration|
 |duration of treatment |Gebruiksperiode:ingangsdatum + einddatum|||
 |medication reason |staat niet in Medicatieafspraak|||
