@@ -51,26 +51,25 @@ flowchart LR
 1(MP HL7 Medicatieafspraken Organizer) --> 8(MP CDA Part2Reuse) 
 ```
 
-| CDA Template| Omschrijving |
-| ----------- | ----------- |
-|MP HL7 Medicatieafspraken Organizer|Lijst van medicatieafspraken|
-|MP CDA Medicatiegegevens|| 
-|MP CDA Medicatieafspraak|	Medicatieafspraak met eventueel op-/afbouw schema|
-|MP CDA Medicatieafspraak inhoud|Medicatieafspraak met eventueel op-/afbouw schema|
-|MP CDA Medicatieafspraak onderdelen 1|MP CDA Medicatieafspraak onderdelen, deel 1|
-|Usable Period|Gebruiksperiode|
-|MP CDA Medication Information|MP CDA Medication Information| 
-|MP CDA Medication Contents|MP CDA Medication Information inhoud|
-|MP CDA Medication Code|Medicatie codering voor medicatieproces, CDA versie.|
-|MP CDA Ingredient|Ingrediënt van medicatie (CDA extensie)|
-|MP Ingredient quantity|De relatieve hoeveelheid van dit ingrediënt in de aangeduide medicatie
-|Quantity unit and translation|Template: Quantity unit and Translation(s)
-|MP CDA Ingredient Material Kind|Materiaalsoort (CDA extensie) 
-|MP CDA Material Code Ext|Material Code Ext (CDA)
-|MP CDA Author Participation|CDA Author Participation voor medicatieproces|
-|MP CDA voorstel Medicatieafspraak onderdelen 2|Medicatieafspraak onderdelen voor de gewone medicatieafspraak én de Voorstel medicatieafspraak en de medicatieafspraak in het voorstel verstrekkingsverzoek, deel 2. hier nog 10 templates!!|
-|active Kopie -indicator|	Kopie-indicator - bij bouwstenen in medicatieproces|
-|active MP MedBeh identificatie|Identificatie van de medicamenteuze behandeling|
+| CDA Template| Omschrijving | opmerking |
+| ----------- | ----------- |----------- |
+|MP HL7 Medicatieafspraken Organizer|Lijst van medicatieafspraken||
+|MP CDA Medicatieafspraak|	Medicatieafspraak met eventueel op-/afbouw schema|koppelingen met Medicatieafspraak, gebruiksinstructue, relaties ketenzorg|
+|MP CDA Medicatieafspraak inhoud|Medicatieafspraak met eventueel op-/afbouw schema| koppelingen met voorschrijver, afgesproken geneesmiddel|
+|MP CDA Medicatieafspraak onderdelen 1|MP CDA Medicatieafspraak onderdelen, deel 1|koppelingen met identificatie, geannuleerd indicator, omschrijving, gebruiksperiode, toedieningsweg|
+|Usable Period|Gebruiksperiode||
+|MP CDA Medication Information|MP CDA Medication Information| product (afgesproken geneesmiddel)|
+|MP CDA Medication Contents|MP CDA Medication Information inhoud||
+|MP CDA Medication Code|Medicatie codering voor medicatieproces, CDA versie||
+|MP CDA Ingredient|Ingrediënt van medicatie (CDA extensie)||
+|MP Ingredient quantity|De relatieve hoeveelheid van dit ingrediënt in de aangeduide medicatie||
+|Quantity unit and translation|Template: Quantity unit and Translation(s)||
+|MP CDA Ingredient Material Kind|Materiaalsoort (CDA extensie) ||
+|MP CDA Material Code Ext|Material Code Ext (CDA)||
+|MP CDA Author Participation|CDA Author Participation voor medicatieproces||
+|MP CDA voorstel Medicatieafspraak onderdelen 2|Medicatieafspraak onderdelen voor de gewone medicatieafspraak én de Voorstel medicatieafspraak en de medicatieafspraak in het voorstel verstrekkingsverzoek, deel 2| hier zitten nog 10 templates onder, maar die hebben we (denk ik) nog niet nodig|
+|active Kopie -indicator|	Kopie-indicator - bij bouwstenen in medicatieproces||
+|active MP MedBeh identificatie|Identificatie van de medicamenteuze behandeling||
 
 
 ## eHDSI dataelements (as-is 18 oktober 2025)
