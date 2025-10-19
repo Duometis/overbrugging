@@ -1,4 +1,4 @@
-# 🇳🇱 NL Medicatieproces CDA → 🇪🇺 eHDSI Medication Item CDA Mapping
+# 🇳🇱 NL Medicatieafspraak (KEZO) CDA → 🇪🇺 eHDSI Medication item CDA Mapping
 
 ## Metadata
 
