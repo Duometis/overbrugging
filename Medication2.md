@@ -49,7 +49,7 @@ flowchart LR
 1(MP HL7 Medicatieafspraken Organizer) --> 6(MP CDA Verstrekking)
 1(MP HL7 Medicatieafspraken Organizer) --> 7(MP CDA Medicatiegebruik)
 1(MP HL7 Medicatieafspraken Organizer) --> 8(MP CDA Part2Reuse)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 61(Stoptype)
+14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) -.-> 61(Stoptype)
 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 62(Reden voor medicatieafspraak)
 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 63(Reden van voorschrijven)
 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 64(MP CDA Aanvullende gebruiksinstructie)
