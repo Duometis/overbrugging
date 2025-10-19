@@ -31,38 +31,42 @@ flowchart LR
 # gebruik van CDA Templates in Acute Zorg KEZO bouwstenen
 ```mermaid
 flowchart LR
-1(MP HL7 Medicatieafspraken Organizer) --> 2(MP CDA Medicatieafspraak)
-2(MP CDA Medicatieafspraak) --> 3(MP CDA Medicatieafspraak inhoud)
-3(MP CDA Medicatieafspraak inhoud) --> 11(MP CDA Medicatieafspraak onderdelen 1)
-11(MP CDA Medicatieafspraak onderdelen 1) --> 21(Usable Period)
-3(MP CDA Medicatieafspraak inhoud) --> 12(MP CDA Medication Information)
-12(MP CDA Medication Information) --> 31(MP CDA Medication Contents)
-31(MP CDA Medication Contents) --> 41(MP CDA Medication Code)
-31(MP CDA Medication Contents) --> 42(MP CDA Ingredient)
-42(MP CDA Ingredient) --> 51(MP Ingredient quantity)
-42(MP CDA Ingredient) --> 81(MP CDA Ingredient Material Kind)
-81(MP CDA Ingredient Material Kind) --> 91(MP CDA Material Code Ext)
-51(MP Ingredient quantity) --> 52(Quantity unit and translation-s)
-3(MP CDA Medicatieafspraak inhoud) --> 13(MP CDA Author Participation)
-3(MP CDA Medicatieafspraak inhoud) --> 15(Kopie-indicator)
-3(MP CDA Medicatieafspraak inhoud) --> 16(MP MedBeh identificatie)
-3(MP CDA Medicatieafspraak inhoud) --> 14(MP CDA -voorstel- Medicatieafspraak onderdelen 2)
-1(MP HL7 Medicatieafspraken Organizer) --> 4(MP CDA Verstrekkingsverzoek)
-1(MP HL7 Medicatieafspraken Organizer) --> 5(MP CDA Toedieningsafspraak)
-1(MP HL7 Medicatieafspraken Organizer) --> 6(MP CDA Verstrekking)
-1(MP HL7 Medicatieafspraken Organizer) --> 7(MP CDA Medicatiegebruik)
-1(MP HL7 Medicatieafspraken Organizer) --> 8(MP CDA Part2Reuse)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) -.-> 61(Stoptype)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 62(Reden voor medicatieafspraak)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 63(Reden van voorschrijven)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 64(MP CDA Aanvullende gebruiksinstructie)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 65(MP CDA MA Aanvullende informatie)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 66(Toelichting)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 67(MP CDA Dosering)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 68(MP Medicatieafspraak identificatie)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 69(MP Toedieningsafspraak identificatie)
-14(MP CDA -voorstel- Medicatieafspraak onderdelen 2) --> 70(MP Medicatiegebruik identificatie)
+    %% Root organizer
+    1(MP HL7 Medicatieafspraken Organizer)
 
+    %% Inclusie (header/patiënt)
+    1 -.-> 2(CDA recordTarget SDTC NL BSN Contactible)
+
+    %% Containment van de entry
+    1 --> 3(MP CDA Medicatieafspraak)
+
+    %% Inhoudelijke children van MP CDA Medicatieafspraak
+    3 --> 4(MP CDA Medicatieafspraak inhoud)
+    4 --> 5(MP CDA Medicatieafspraak onderdelen 1)
+    4 --> 6(MP CDA -voorstel- Medicatieafspraak onderdelen 2)
+    4 --> 7(MP CDA Medication Information)
+    4 --> 8(MP CDA Author Participation)
+    4 --> 9(Usable Period)
+
+    %% Inclusie binnen onderdelen 1
+    5 -.-> 9(Usable Period)
+
+    %% EntryRelationships onder onderdelen 2
+    6 -.-> 10(Stoptype)
+    6 --> 11(Reden voor medicatieafspraak)
+    6 --> 12(Reden van voorschrijven)
+    6 --> 13(MP CDA Aanvullende gebruiksinstructie)
+    6 --> 14(MP CDA MA Aanvullende informatie)
+    6 --> 15(Toelichting)
+
+    %% Relaties/identificaties vanuit de Medicatieafspraak
+    3 --> 16(MP Medicatieafspraak identificatie)
+    3 --> 17(MP Toedieningsafspraak identificatie)
+    3 --> 18(MP Medicatiegebruik identificatie)
+
+    %% Doseer-helpers (gebruikt binnen doseerinstructies)
+    6 --> 19(DoseQuantity and translation-s)
+    6 --> 20(Quantity unit and translation-s)
 ```
 
 | CDA Template| Omschrijving | opmerking |
