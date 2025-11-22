@@ -1,4 +1,4 @@
-``mermaid
+```mermaid
 graph LR
 
     %% Nodes
@@ -23,7 +23,7 @@ graph LR
 
     Huisartsen -->|12 - Ketenzorg| UMCZiekenhuizen
 
-    UMCZiekenhuizen -->|7 - Medicatie proces (MP9)| Apotheken
+    UMCZiekenhuizen -->|7 - Medicatie proces MP9| Apotheken
     UMCZiekenhuizen -->|4 - BGZ-MS2| Laboratoria
     UMCZiekenhuizen -->|25 - Beeldbeschikbaarheid| Laboratoria
     Laboratoria -->|3 - Lab. uitwisseling| UMCZiekenhuizen
@@ -38,4 +38,4 @@ graph LR
 
     ZKlinieken -->|4 - BGZ-MS2| UMCZiekenhuizen
 
-``
+```
