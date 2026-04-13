@@ -6,7 +6,7 @@ sequenceDiagram
 Note over XIS: GP system
     participant XIS
     participant LSP
-    participant A as NCP country NL
+    participant A as NCP country A
     participant B as NCP country B
     B->>A: request ePS
     A->>LSP: ePS building blocks
@@ -25,7 +25,7 @@ A->>B: pivot ePS
 ```mermaid
 sequenceDiagram
   participant B as NCP country B
-  participant A as NCP country NL
+  participant A as NCP country A
 create participant XSLT as XSLT
 Note right of XSLT: consider this as XSLT-in-a-box
     A->>XSLT: response bundle SAZ
