@@ -1,5 +1,4 @@
 # Gecombineerd overzicht programmaplanning PIEZO
-# Gecombineerd overzicht programmaplanning PIEZO
 
 | Periode | Activiteit | Onderdeel / Programmalijn |
 |---|---|---|
