@@ -39,7 +39,7 @@
 | Q2 2026 – Q2 2028 | Implementeren eerste set (ePeD compatible) Kickstart MO | eP/eD / Implementatie |
 | Q1 2027 – Q4 2027 | Beheerafspraken PS-A als basis aanvullen voor ePeD | eP/eD / In beheername |
 | Q1 2028 – Q4 2028 | Beheerafspraken ePeD cross-border vastleggen | eP/eD / In beheername |
-| Q2 2026 – Q1 2027 | Functionele, keten- en technische ontwerpen afronden | Plateau-2 |
+| Q2 2026 – Q1 2027 | Functionele, keten- en technische ontwerpen afronden |PS-A Plateau-2 |
 | Q2 2026 – Q1 2027 | Detailontwerp Plateau-2 uitwerken | Plateau-2 |
 | Q2 2026 – Q1 2027 | Ontwerp ketenprocessen opstellen | Plateau-2 |
 | Q2 2026 – Q1 2027 | Technisch ontwerp infrastructuur en koppelingen | Plateau-2 |
