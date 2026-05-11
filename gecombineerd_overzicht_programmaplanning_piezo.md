@@ -1,5 +1,4 @@
 # Gecombineerd overzicht programmaplanning PIEZO
-# Gecombineerd overzicht programmaplanning PIEZO
 
 | Periode | Activiteit | Onderdeel / Programmalijn | Deliverable |
 |---|---|---|---|
@@ -25,10 +24,10 @@
 | Q1 2026 – Q3 2028 | UZI-traject uitvoeren | Overige afhankelijkheden | Operationeel UZI-traject |
 | Q1 2026 – Q2 2028 | Aanhaken en monitoren realisatieproces Kickstart MO | eP/eD / Realisatie & testen | Monitoringrapportages Kickstart MO |
 | Q2 2026 – Q1 2027 | Functionele, keten- en technische ontwerpen afronden | PS-A Plateau-2 | Definitieve ontwerpen Plateau-2 |
-| Q2 2026 – Q1 2027 | Detailontwerp Plateau-2 uitwerken | Plateau-2 | Detailontwerp Plateau-2 |
-| Q2 2026 – Q1 2027 | Ontwerp ketenprocessen opstellen | Plateau-2 | Ontwerpdocument ketenprocessen |
-| Q2 2026 – Q1 2027 | Technisch ontwerp infrastructuur en koppelingen | Plateau-2 | Technisch infrastructuurontwerp |
-| Q2 2026 – Q1 2027 | FHIR-koppelvlakken ontwerpen | Plateau-2 | FHIR-koppelvlak specificaties |
+| Q2 2026 – Q1 2027 | Detailontwerp Plateau-2 uitwerken | PS-A Plateau-2| Detailontwerp Plateau-2 |
+| Q2 2026 – Q1 2027 | Ontwerp ketenprocessen opstellen | PS-A Plateau-2 | Ontwerpdocument ketenprocessen |
+| Q2 2026 – Q1 2027 | Technisch ontwerp infrastructuur en koppelingen | PS-A Plateau-2 | Technisch infrastructuurontwerp |
+| Q2 2026 – Q1 2027 | FHIR-koppelvlakken ontwerpen | PS-A Plateau-2 | FHIR-koppelvlak specificaties |
 | Q2 2026 – Q2 2027 | OTAP-omgeving opzetten | eP/eD / Ontwerp | Werkende OTAP-omgeving |
 | Q2 2026 – Q2 2027 | Validatiepakket/NTV voorbereiden | eP/eD / Ontwerp | Validatiepakket en NTV |
 | Q2 2026 – Q2 2027 | Iteratief ontwerpen, realiseren en testen ePeD bij NCPeH NL | eP/eD / Ontwerp | Iteratieve ontwerp- en testresultaten |
